@@ -30,11 +30,11 @@ public class ModConfigDef {
     ));
 
     //@RangeConstraint(min = 8, max = 128)
-    public int iconSize = 48;
+    public int iconSize = 32;
 
     //@SectionHeader("screenTypes")
 
-    public ScreenTypes screenType = ScreenTypes.SNOWFLAKES;
+    public ScreenTypes screenType = ScreenTypes.STACKING;
 
     public Orientation orientation = Orientation.DOWN;
 
