@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.enjarai.mls.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "DrawContextAccessor",
+    "SplashOverlayMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
