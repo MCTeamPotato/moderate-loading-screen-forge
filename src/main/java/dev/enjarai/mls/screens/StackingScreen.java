@@ -1,6 +1,5 @@
 package dev.enjarai.mls.screens;
 
-import dev.enjarai.mls.ModerateLoadingScreen;
 import dev.enjarai.mls.config.ModConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;

@@ -9,11 +9,11 @@ version = project.mod_version
 group = project.maven_group
 
 loom {
-    accessWidenerPath = file("src/main/resources/mls.accesswidener")
+    //accessWidenerPath = file("src/main/resources/mls.accesswidener")
 
     forge {
-        convertAccessWideners = true
-        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+        //convertAccessWideners = true
+        //extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
         mixinConfigs = [
                 "mls.mixins.json"
@@ -29,7 +29,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft_version}"
     mappings(loom.officialMojangMappings())
     forge "net.minecraftforge:forge:${project.forge_version}"
-    // implementation "me.shedaniel.cloth:cloth-config-forge:11.1.136"
+    runtimeOnly "me.shedaniel.cloth:cloth-config-forge:11.1.136"
 }
 
 processResources {

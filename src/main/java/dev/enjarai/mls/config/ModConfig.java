@@ -3,8 +3,6 @@ package dev.enjarai.mls.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
