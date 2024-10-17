@@ -1,6 +1,6 @@
 package dev.enjarai.mls.mixin;
 
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
@@ -22,11 +22,11 @@ public interface DrawContextAccessor {
             float v1);
 }
 *//*?} else {*/
-@Mixin(net.minecraft.client.gui.DrawContext.class)
+@Mixin(net.minecraft.client.gui.GuiGraphics.class)
 public interface DrawContextAccessor {
-    @Invoker("drawTexturedQuad")
+    @Invoker("innerBlit")
     void loadingScreen$drawTexturedQuad(
-            Identifier identifier,
+            ResourceLocation identifier,
             int x0,
             int x1,
             int y0,

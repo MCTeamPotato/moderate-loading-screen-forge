@@ -1,23 +1,23 @@
 package dev.enjarai.mls;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import dev.enjarai.mls.mixin.DrawContextAccessor;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 
 // This exists to provide a unified interface for rendering
 public class DrawContextWrapper {
     /*? if >=1.20 {*/
-    private final DrawContext context;
-    public DrawContextWrapper(DrawContext context) {
+    private final GuiGraphics context;
+    public DrawContextWrapper(GuiGraphics context) {
         this.context = context;
     }
 
-    public MatrixStack matrices() {
-        return context.getMatrices();
+    public PoseStack matrices() {
+        return context.pose();
     }
 
-    public void drawTexturedQuad(Identifier identifier, int x0, int x1, int y0, int y1) {
+    public void drawTexturedQuad(ResourceLocation identifier, int x0, int x1, int y0, int y1) {
         ((DrawContextAccessor) context).loadingScreen$drawTexturedQuad(
                 identifier,
                 x0, x1, y0, y1, 0,

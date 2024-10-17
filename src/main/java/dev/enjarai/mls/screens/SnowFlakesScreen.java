@@ -1,16 +1,16 @@
 package dev.enjarai.mls.screens;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 
 public class SnowFlakesScreen extends LoadingScreen {
 
-  public SnowFlakesScreen(MinecraftClient client) {
+  public SnowFlakesScreen(Minecraft client) {
       super(client);
   }
 
   @Override
-  public void createPatch(Identifier texture) {
+  public void createPatch(ResourceLocation texture) {
       patches.add(new Patch(
               random.nextDouble() * (getScreenWidth() + patchSize),
               -patchSize, 0,

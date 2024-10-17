@@ -1,8 +1,9 @@
 package dev.enjarai.mls.screens;
 
 import dev.enjarai.mls.ModerateLoadingScreen;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.util.Identifier;
+import dev.enjarai.mls.config.ModConfig;
+import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.HashMap;
 
@@ -11,14 +12,14 @@ public class StackingScreen extends LoadingScreen {
     protected final HashMap<Integer, Integer> patchesInColumn = new HashMap<>();
     protected double scroll = 0;
     protected double scrollDelta = 0;
-    private final int cycleSeconds = ModerateLoadingScreen.CONFIG.stackingConfig.cycleSeconds;
+    private final int cycleSeconds = ModConfig.cycleSeconds.get();
 
-    public StackingScreen(MinecraftClient client) {
+    public StackingScreen(Minecraft client) {
         super(client);
     }
 
     @Override
-    public void createPatch(Identifier texture) {
+    public void createPatch(ResourceLocation texture) {
         Integer column = pickPatchColumn();
 
         if (column != null) {

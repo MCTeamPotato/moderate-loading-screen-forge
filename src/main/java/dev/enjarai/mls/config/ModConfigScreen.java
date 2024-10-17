@@ -1,37 +1,21 @@
 package dev.enjarai.mls.config;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.Util;
+import net.minecraftforge.client.ConfigScreenHandler;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 public class ModConfigScreen {
-    /*
-    public ModConfigScreen(Identifier modelId, ConfigWrapper<?> config, @Nullable Screen parent) {
-        super(modelId, config, parent);
+
+    public static final ConfigScreenHandler.ConfigScreenFactory FACTORY =
+            new ConfigScreenHandler.ConfigScreenFactory(ModConfigScreen::openConfig);
+
+    public static Screen openConfig(Minecraft mc, Screen screen) {
+        Util.getPlatform().openFile(
+                FMLPaths.CONFIGDIR.get().resolve("mls-client.toml").toFile()
+        );
+        return screen;
     }
 
-    @SuppressWarnings({"DataFlowIssue", "unchecked"})
-    @Override
-    protected void build(FlowLayout rootComponent) {
-        super.build(rootComponent);
-        rootComponent.childById(ButtonComponent.class, "preview-button").onPress(button -> {
-            this.options.forEach((option, component) -> {
-                if (!component.isValid()) return;
-                option.set(component.parsedValue());
-            });
-            MinecraftClient.getInstance().reloadResources();
-        });
-    }
-
-    /*? if >=1.20.6 {*//*
-    @Override
-    public void renderBackground(net.minecraft.client.gui.DrawContext context, int mouseX, int mouseY, float delta) {
-        if (client.world == null) {
-            renderPanoramaBackground(context, delta);
-        }
-
-        renderDarkening(context);
-    }
-    *//*? }*/
 }

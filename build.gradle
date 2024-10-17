@@ -22,11 +22,14 @@ loom {
 
     mixin.defaultRefmapName.set("mls.refmap.json")
 }
-
+repositories {
+    maven { url "https://maven.shedaniel.me/" }
+}
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mapping}:v2"
+    minecraft "net.minecraftforge:forge:${project.minecraft_version}"
+    mappings(loom.officialMojangMappings())
     forge "net.minecraftforge:forge:${project.forge_version}"
+    implementation "me.shedaniel.cloth:cloth-config-forge:11.1.136"
 }
 
 processResources {
